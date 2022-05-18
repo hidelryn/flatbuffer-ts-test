@@ -1,0 +1,29 @@
+namespace FlatBuffer.Users;
+
+enum Gender:byte { male = 0, female }
+
+struct Phone { // only scalar(숫자)
+    first: int;
+    second: int;
+    third: int;
+}
+
+table ReqUser {
+    name: string;
+    gender: Gender;
+    phone: Phone;
+}
+
+table ResUser {
+    id: int;
+    create_at: long;
+    name: string;
+    gender: Gender;
+    phone: Phone;
+}
+
+table ResUserList {
+    users: [ResUser];
+}
+
+
